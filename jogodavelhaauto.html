@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jogo da Velha">
+    <meta name="author" content="Rafael Maia Sant' Anna Cuerci">
+    <meta name="keywords" content="jogo, velha">
+    <title>Jogo da Velha</title>
+    <style>
+        body {
+            display: flex;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .inicio {
+            margin: auto;
+            text-align: center;
+            margin-top: 50px;
+            font-size: 17pt;
+        }
+
+        .container-master {
+            display: flex;
+            flex-direction: row;
+            margin: auto;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .quadrado {
+            width: 170px;
+            height: 170px;
+            background-color: yellow;
+            border: 2px solid black;
+            margin-left: 5px;
+            margin-top: 5px;
+            border-radius: 10px;
+        }
+
+        .quadrado:hover {
+            background-color: rgb(216, 216, 7);
+        }
+
+        .imgJogada {
+            margin: auto;
+            height: 160px;
+            width: 160px;
+        }
+
+        .oculta {
+            display: none;
+        }
+
+        .resFinal {
+            margin: auto;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .vencedor {
+            text-align: center;
+            color: red;
+            font-size: 50pt;
+        }
+
+        .btn {
+            border-style: none;
+            background-color: transparent;
+            margin: auto;
+        }
+
+        .btn-solarSystem {
+            color: white;
+            background: red;
+            font-size: 20pt;
+            padding: 20px 35px;
+            border-radius: 20px;
+        }
+
+        .btn-azul {
+            background: blue;
+            color: white;
+            padding: 15px 35px;
+            font-size: 20pt;
+            border-radius: 20px;
+        }
+
+        .btn-azul:hover, .btn-azul:active {
+            box-shadow: 0px 0px 20px blue;
+        }
+
+        .btn-solarSystem:hover, .btn-solarSystem:active {
+            box-shadow: 0px 0px 20px red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="inicio oculta" id="inicio">
+        <h1>Jogo Da Velha</h1>
+        <p>Divirta-se jogando o famoso Jogo da Velha.</p>
+        <p>Com qual símbolo deseja jogar?</p>
+        <p>
+            <label for="rdX"><input type="radio" name="simbolo" id="rdX" checked>X</label>
+            <label for="rdC"><input type="radio" name="simbolo" id="rdC">Círculo</label>
+        </p>
+        <input type="button" value="Iniciar Jogo" class="btn btn-azul" id="btIniciar">
+    </div>
+    <div class="container-master" id="tudo">
+        <div class="container" id="jogo">
+            <h1 style="text-align:center;">Jogo da Velha</h1>
+            <div class="row">
+                <div class="quadrado"></div>
+                <div class="quadrado"></div>
+                <div class="quadrado"></div>
+            </div>
+            <div class="row">
+                <div class="quadrado"></div>
+                <div class="quadrado"></div>
+                <div class="quadrado"></div>
+            </div>
+            <div class="row">
+                <div class="quadrado"></div>
+                <div class="quadrado"></div>
+                <div class="quadrado"></div>
+            </div>
+        </div>
+    </div>
+    <div class="resFinal oculta" id="resFinal">
+        <h1 class="vencedor" id="vencedor"></h1>
+        <input type="button" value="Jogar Novamente" id="btJogarNovamente" class="btn btn-solarSystem">
+    </div>
+    <script src="jogodavelhaauto.js"></script>
+</body>
+
+</html>
